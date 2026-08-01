@@ -33,7 +33,7 @@ const projects: Project[] = [
 
 function Projects() {
   return (
-    <section className="bg-slate-950 text-white px-6 md:px-20 py-24">
+    <section id="projects" className="bg-slate-950 text-white px-6 md:px-20 py-24">
       <h2 className="text-4xl font-bold mb-2">My Projects</h2>
       <p className="text-slate-400 mb-12">
         A few things I've built and shipped.
