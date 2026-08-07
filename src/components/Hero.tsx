@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="min-h-screen bg-slate-950 text-white flex flex-col justify-center px-6 md:px-20">
+    <section id="home" className="min-h-[70vh] md:min-h-screen bg-slate-950 text-white flex flex-col justify-center px-6 md:px-20 py-10 md:py-16">
       <p className="text-slate-400 text-lg mb-4">Hello</p>
 
       <h1 className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl">
@@ -34,7 +34,7 @@ function Hero() {
           </span>
         ))}
       </div>
-    </section>
+</section>
   )
 }
 

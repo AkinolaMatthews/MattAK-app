@@ -6,10 +6,13 @@ const instagram = "https://www.instagram.com/akinolamatthews"
 
 function Contact() {
   return (
-    <section id="contact" className="bg-slate-950 text-white px-6 md:px-20 py-24 border-t border-slate-800">
+    <section
+      id="contact"
+      className="bg-slate-950 text-white px-6 md:px-20 py-12 md:py-24 border-t border-slate-800"
+    >
       <div className="text-center max-w-2xl mx-auto">
         <p className="text-emerald-400 text-sm font-medium mb-2">
-          // Feel free to reach out for collaborations or inquiries
+          Feel free to reach out for collaborations or inquiries
         </p>
         <h2 className="text-4xl font-bold mb-6">Let's Work Together</h2>
         <p className="text-slate-400 mb-10">
