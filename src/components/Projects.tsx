@@ -22,6 +22,34 @@ const projects: Project[] = [
     link: "https://foreitgolf.com",
   },
   {
+    title: "IGCA (Indigenous General Contractors Association)",
+    description:
+      "A trade association website for indigenous construction contractors in Nigeria, featuring services, project galleries, and member testimonials.",
+    tech: ["WordPress", "Slider Revolution", "Elementor"],
+    link: "http://indigecontass.com.ng/",
+  },
+  {
+    title: "MAAANACC",
+    description:
+      "A playful comic-club fan site and merch shop for kids, featuring original character profiles and a shop built with WooCommerce.",
+    tech: ["WordPress", "Elementor", "WooCommerce"],
+    link: "https://maaanacc.com/",
+  },
+  {
+    title: "2373 NW 195 Ave",
+    description:
+      "A single-property real estate listing site with photo gallery, floor plans, 3D tour integration, and an inquiry form for a Florida waterfront home.",
+    tech: ["WordPress", "Slider Revolution", "Elementor"],
+    link: "https://2373nw195ave.com/",
+  },
+  {
+    title: "M4Levents",
+    description:
+      "A booking and portfolio site for a 360° photo booth and event photography business, with service packages and a photo gallery.",
+    tech: ["WordPress", "Elementor"],
+    link: "https://m4levents.com/",
+  },
+  {
     title: "MesBiensÀVendre",
     description:
       "A French real estate platform with MLS/IDX integration and multilingual property listings, currently in development.",
