@@ -7,6 +7,7 @@ import Journey from './components/Journey'
 import About from './components/About'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
+import Testimonials from './components/Testimonials'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Projects />
       <Skills />
       <Journey />
+      <Testimonials />
       <About />
       <FAQ />
       <Contact />
