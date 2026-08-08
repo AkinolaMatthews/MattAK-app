@@ -24,9 +24,9 @@ const skillGroups: SkillGroup[] = [
 
 function Skills() {
   return (
-    <section id="skills" className="bg-slate-950 text-white px-6 md:px-20 py-24">
+    <section id="skills" className="text-slate-900 dark:text-white px-6 md:px-20 py-12 md:py-24 transition-colors">
       <h2 className="text-4xl font-bold mb-2">The Stack</h2>
-      <p className="text-slate-400 mb-12">
+      <p className="text-slate-600 dark:text-slate-400 mb-12">
         Tools and technologies I use to build complete, functional websites.
       </p>
 
@@ -34,16 +34,16 @@ function Skills() {
         {skillGroups.map((group) => (
           <div
             key={group.category}
-            className="border border-slate-800 rounded-xl p-6"
+            className="border border-slate-200 dark:border-slate-800 rounded-xl p-6"
           >
-            <h3 className="text-emerald-400 font-semibold mb-4">
+            <h3 className="text-emerald-600 dark:text-emerald-400 font-semibold mb-4">
               {group.category}
             </h3>
             <div className="flex flex-wrap gap-2">
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="text-xs px-3 py-1 border border-slate-700 rounded-full text-slate-300"
+                  className="text-xs px-3 py-1 border border-slate-300 dark:border-slate-700 rounded-full text-slate-700 dark:text-slate-300"
                 >
                   {skill}
                 </span>

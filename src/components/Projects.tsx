@@ -33,12 +33,9 @@ const projects: Project[] = [
 
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="bg-slate-950 text-white px-6 md:px-20 py-12 md:py-24"
-    >
+    <section id="projects" className="text-slate-900 dark:text-white px-6 md:px-20 py-12 md:py-24 transition-colors">
       <h2 className="text-4xl font-bold mb-2">My Projects</h2>
-      <p className="text-slate-400 mb-12">
+      <p className="text-slate-600 dark:text-slate-400 mb-12">
         A few things I've built and shipped.
       </p>
 
@@ -46,16 +43,16 @@ function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="border border-slate-800 rounded-xl p-6 hover:border-emerald-400 transition-colors"
+            className="border border-slate-200 dark:border-slate-800 rounded-xl p-6 hover:border-emerald-400 transition-colors"
           >
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-            <p className="text-slate-400 text-sm mb-4">{project.description}</p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">{project.description}</p>
 
             <div className="flex gap-2 flex-wrap mb-4">
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="text-xs px-2 py-1 border border-slate-700 rounded-full text-slate-300"
+                  className="text-xs px-2 py-1 border border-slate-300 dark:border-slate-700 rounded-full text-slate-700 dark:text-slate-300"
                 >
                   {t}
                 </span>
@@ -63,23 +60,19 @@ function Projects() {
             </div>
 
             {project.inDevelopment && (
-              <span className="text-amber-400 text-xs font-medium block mb-2">
+              <span className="text-amber-600 dark:text-amber-400 text-xs font-medium block mb-2">
                 In Development
               </span>
             )}
-            {project.link ? (
+            {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-emerald-400 text-sm font-medium hover:underline"
+                className="text-emerald-600 dark:text-emerald-400 text-sm font-medium hover:underline"
               >
                 View Project →
               </a>
-            ) : (
-              <span className="text-slate-500 text-sm font-medium">
-                Project unavailable
-              </span>
             )}
           </div>
         ))}
