@@ -1,6 +1,3 @@
-const profileImg =
-  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='100%' height='100%' fill='%23e2e8f0'/><circle cx='200' cy='160' r='72' fill='%236b7280'/><rect x='96' y='260' width='208' height='88' rx='44' fill='%236b7280'/></svg>";
-
 function About() {
   return (
     <section id="about" className="text-slate-900 dark:text-white px-6 md:px-20 py-12 md:py-24 transition-colors">
@@ -42,12 +39,8 @@ function About() {
         </div>
 
         <div className="space-y-6">
-          <img
-            src={profileImg}
-            alt="Akinola Matthew"
-            className="w-full max-w-sm mx-auto rounded-xl border border-slate-200 dark:border-slate-800 object-cover"
-          />
-
+          <img alt="About me" className="w-full rounded-xl shadow-lg" />
+           
           <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6">
             <h3 className="text-lg font-semibold mb-3">What I Do</h3>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
