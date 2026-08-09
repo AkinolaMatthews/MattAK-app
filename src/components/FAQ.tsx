@@ -24,7 +24,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can I see live examples of your work?",
     answer:
-      "Yes — check out the Projects section above. TatianaMunoz.com and Fore It Golf are both live, and MesBiensÀVendre is live but still being finished.",
+      "Yes — check out the Projects section above for live sites spanning real estate, e-commerce, events, and more.",
   },
   {
     question: "How can I get in touch?",
@@ -49,7 +49,7 @@ function FAQ() {
           return (
             <div
               key={faq.question}
-              className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden"
+              className="bg-white dark:bg-slate-900 shadow-sm rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : index)}

@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import { HiHome, HiFolder, HiCommandLine, HiUser, HiEnvelope } from 'react-icons/hi2'
 import ThemeToggle from './ThemeToggle'
 
 const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#home', icon: HiHome },
+  { label: 'Projects', href: '#projects', icon: HiFolder },
+  { label: 'Skills', href: '#skills', icon: HiCommandLine },
+  { label: 'About', href: '#about', icon: HiUser },
+  { label: 'Contact', href: '#contact', icon: HiEnvelope },
 ]
 
 function Navbar() {
@@ -19,14 +20,16 @@ function Navbar() {
           AM<span className="text-emerald-500 dark:text-emerald-400">.</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8 text-slate-700 dark:text-slate-300 text-sm">
+        <div className="hidden md:flex items-center gap-6 text-slate-700 dark:text-slate-300">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
+              aria-label={link.label}
+              title={link.label}
               className="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
             >
-              {link.label}
+              <link.icon className="w-5 h-5" />
             </a>
           ))}
           <ThemeToggle />
@@ -45,14 +48,15 @@ function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden flex flex-col gap-4 mt-4 text-slate-700 dark:text-slate-300 text-sm">
+        <div className="md:hidden flex flex-col gap-4 mt-4 text-slate-700 dark:text-slate-300">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+              className="flex items-center gap-3 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
             >
+              <link.icon className="w-5 h-5" />
               {link.label}
             </a>
           ))}

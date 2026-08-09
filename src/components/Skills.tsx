@@ -1,3 +1,5 @@
+import { techIcons } from '../utils/techIcons'
+
 type SkillGroup = {
   category: string
   skills: string[]
@@ -34,20 +36,24 @@ function Skills() {
         {skillGroups.map((group) => (
           <div
             key={group.category}
-            className="border border-slate-200 dark:border-slate-800 rounded-xl p-6"
+            className="bg-white dark:bg-slate-900 shadow-sm rounded-xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
           >
             <h3 className="text-emerald-600 dark:text-emerald-400 font-semibold mb-4">
               {group.category}
             </h3>
             <div className="flex flex-wrap gap-2">
-              {group.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="text-xs px-3 py-1 border border-slate-300 dark:border-slate-700 rounded-full text-slate-700 dark:text-slate-300"
-                >
-                  {skill}
-                </span>
-              ))}
+              {group.skills.map((skill) => {
+                const Icon = techIcons[skill]
+                return (
+                  <span
+                    key={skill}
+                    className="flex items-center gap-2 text-xs px-3 py-1 border border-slate-300 dark:border-slate-700 rounded-full text-slate-700 dark:text-slate-300"
+                  >
+                    {Icon && <Icon className="w-3.5 h-3.5" />}
+                    {skill}
+                  </span>
+                )
+              })}
             </div>
           </div>
         ))}

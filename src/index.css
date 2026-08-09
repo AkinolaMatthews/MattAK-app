@@ -9,3 +9,45 @@ body {
 html.dark body {
   background-color: #020617;
 }
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, 90px) scale(1.15); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-90px, 60px) scale(1.2); }
+}
+
+.animate-float-slow {
+  animation: float-slow 18s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 24s ease-in-out infinite;
+}
+
+@keyframes marquee-fast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee-fast {
+  animation: marquee-fast 20s linear infinite;
+}
+
+@keyframes marquee-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee-slow {
+  animation: marquee-slow 45s linear infinite;
+}
+
+@keyframes marquee-slow-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee-slow-reverse {
+  animation: marquee-slow-reverse 50s linear infinite;
+}

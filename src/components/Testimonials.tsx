@@ -61,7 +61,6 @@ function Testimonials() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!name.trim() || !quote.trim()) return
-
     setTestimonials([{ name, role: role || 'Client', quote }, ...testimonials])
     setName('')
     setRole('')
@@ -70,6 +69,8 @@ function Testimonials() {
     setTimeout(() => setSubmitted(false), 3000)
   }
 
+  const marqueeItems = [...testimonials, ...testimonials]
+
   return (
     <section id="testimonials" className="text-slate-900 dark:text-white px-6 md:px-20 py-12 md:py-24 transition-colors">
       <h2 className="text-4xl font-bold mb-2">Client Testimonials</h2>
@@ -77,22 +78,33 @@ function Testimonials() {
         What people have said about working with me.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-16">
-        {testimonials.map((t, i) => (
-          <div
-            key={i}
-            className="border border-slate-200 dark:border-slate-800 rounded-xl p-6"
-          >
-            <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">
-              "{t.quote}"
-            </p>
-            <p className="font-semibold text-sm">{t.name}</p>
-            <p className="text-slate-500 dark:text-slate-500 text-xs">{t.role}</p>
+      <div className="space-y-6 mb-16">
+        <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+          <div className="flex gap-6 w-max animate-marquee-slow hover:[animation-play-state:paused]">
+            {marqueeItems.map((t, i) => (
+              <div key={`row1-${i}`} className="flex-none w-72 sm:w-80 bg-white dark:bg-slate-900 shadow-sm rounded-xl p-6">
+                <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">"{t.quote}"</p>
+                <p className="font-semibold text-sm">{t.name}</p>
+                <p className="text-slate-500 dark:text-slate-500 text-xs">{t.role}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+          <div className="flex gap-6 w-max animate-marquee-slow-reverse hover:[animation-play-state:paused]">
+            {[...marqueeItems].reverse().map((t, i) => (
+              <div key={`row2-${i}`} className="flex-none w-72 sm:w-80 bg-white dark:bg-slate-900 shadow-sm rounded-xl p-6">
+                <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">"{t.quote}"</p>
+                <p className="font-semibold text-sm">{t.name}</p>
+                <p className="text-slate-500 dark:text-slate-500 text-xs">{t.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="max-w-xl border border-slate-200 dark:border-slate-800 rounded-xl p-6">
+      <div className="max-w-xl bg-white dark:bg-slate-900 shadow-sm rounded-xl p-6">
         <h3 className="text-lg font-semibold mb-4">Leave a Review</h3>
         <form onSubmit={handleSubmit} className="space-y-3">
           <input
@@ -120,14 +132,12 @@ function Testimonials() {
           />
           <button
             type="submit"
-            className="bg-emerald-500 dark:bg-emerald-400 text-white dark:text-slate-950 font-semibold px-6 py-2 rounded-full text-sm hover:bg-emerald-400 dark:hover:bg-emerald-300 transition-colors"
+            className="bg-emerald-500 dark:bg-emerald-400 text-white dark:text-slate-950 font-semibold px-6 py-2 rounded-full text-sm hover:bg-emerald-400 dark:hover:bg-emerald-300 hover:scale-105 transition-all duration-200"
           >
             Submit Review
           </button>
           {submitted && (
-            <p className="text-emerald-600 dark:text-emerald-400 text-sm">
-              Thanks for your review!
-            </p>
+            <p className="text-emerald-600 dark:text-emerald-400 text-sm">Thanks for your review!</p>
           )}
         </form>
       </div>

@@ -38,18 +38,14 @@ function About() {
           </div>
         </div>
 
-        <div className="space-y-6">
-          <img alt="About me" className="w-full rounded-xl shadow-lg" />
-           
-          <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-3">What I Do</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-              I build complete, functional websites — handling everything
-              from layout and design to backend setup and deployment — so
-              businesses and individuals can go from an idea to a live site
-              with minimal friction.
-            </p>
-          </div>
+        <div className="bg-white dark:bg-slate-900 shadow-sm rounded-xl p-8">
+          <h3 className="text-lg font-semibold mb-4">What I Do</h3>
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            I build complete, functional websites — handling everything from
+            layout and design to backend setup and deployment — so businesses
+            and individuals can go from an idea to a live site with minimal
+            friction.
+          </p>
         </div>
       </div>
     </section>
