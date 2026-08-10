@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SectionHeading from './SectionHeading'
 
 type FAQItem = {
   question: string
@@ -37,13 +38,16 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="text-slate-900 dark:text-white px-6 md:px-20 py-12 md:py-24 transition-colors">
-      <h2 className="text-4xl font-bold mb-2">Common Questions</h2>
-      <p className="text-slate-600 dark:text-slate-400 mb-12">
-        Answers to what people usually ask before reaching out.
-      </p>
+    <section id="faq" className="text-slate-900 dark:text-white px-4 sm:px-6 md:px-20 py-12 md:py-24 transition-colors">
+      <SectionHeading
+        badge="Got questions?"
+        badgeColor="violet"
+        title="Common"
+        highlight="Questions"
+        subtitle="Answers to what people usually ask before reaching out."
+      />
 
-      <div className="max-w-3xl space-y-3">
+      <div className="max-w-3xl mx-auto space-y-3">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index
           return (
