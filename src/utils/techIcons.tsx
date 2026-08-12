@@ -1,7 +1,7 @@
 import {
   SiReact, SiTypescript, SiJavascript, SiTailwindcss, SiVite,
   SiNodedotjs, SiGit, SiGithub, SiVercel, SiWordpress,
-  SiWoocommerce, SiPhp, SiHtml5, SiCss, SiElementor,
+  SiWoocommerce, SiPhp, SiHtml5, SiCss, SiElementor, SiMysql, SiMongodb,
 } from 'react-icons/si'
 import type { IconType } from 'react-icons'
 
@@ -21,4 +21,6 @@ export const techIcons: Record<string, IconType> = {
   HTML5: SiHtml5,
   CSS3: SiCss,
   Elementor: SiElementor,
+  MySQL: SiMysql,
+  MongoDB: SiMongodb,
 }
