@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AmbientBackground from './components/AmbientBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -8,12 +9,12 @@ import Journey from './components/Journey'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
+import AdminLogin from './components/admin/AdminLogin'
+import AdminDashboard from './components/admin/AdminDashboard'
 
-function App() {
+function HomePage() {
   return (
-    <div className="relative">
-      <AmbientBackground />
-      <Navbar />
+    <>
       <Hero />
       <Projects />
       <About />
@@ -22,7 +23,23 @@ function App() {
       <Testimonials />
       <FAQ />
       <Contact />
-    </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="relative">
+        <AmbientBackground />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
